@@ -1,105 +1,127 @@
-/* Základní nastavení těla */
+/* Globální styl */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #252627, #1c1c1c);
-    color: #fff;
+    font-family: "Inter", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0d1221, #05060a 70%);
+    color: #e4e4e4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease;
 }
 
-/* Kontejner převodníku */
+/* Card efekt */
 .container {
-    background-color: rgba(40, 40, 40, 0.95);
-    padding: 30px 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    backdrop-filter: blur(22px);
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 35px 40px;
     text-align: center;
-    width: 350px;
+    width: 360px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.6), 0 0 25px rgba(0, 180, 255, 0.15);
+    animation: fade-in 0.7s ease;
+}
+
+/* Fade animace */
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Nadpis */
 h1 {
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    color: #f1f1f1;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 28px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 0 12px rgba(120, 200, 255, 0.5);
 }
 
-/* Inputy */
-input[type="number"], input[type="text"], select {
+/* Inputs */
+input[type="number"],
+input[type="text"],
+select {
     width: 100%;
-    padding: 10px 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    border: none;
+    padding: 12px 14px;
+    margin: 12px 0;
     font-size: 1rem;
-    outline: none;
-    background-color: #333;
-    color: #fff;
-    transition: all 0.3s ease;
-}
-
-input[type="number"]:focus,
-input[type="text"]:focus,
-select:focus {
-    background-color: #444;
-    box-shadow: 0 0 10px #097ed8;
-}
-
-/* Tlačítka */
-button {
-    margin: 10px 5px;
-    padding: 10px 20px;
     border-radius: 12px;
     border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
+    outline: none;
+
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* Glow při focusu */
+input:focus,
+select:focus {
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 12px #00aaff, inset 0 0 12px rgba(0,0,0,0.6);
 }
 
-button img {
-    vertical-align: middle;
-}
-
-/* Primární tlačítko */
+/* Tlačítko hlavní */
 button.primary {
-    background: #097ed8;
-    color: #fff;
-}
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.05rem;
+    font-weight: 600;
 
-button.primary:hover {
-    background: #0561a1;
-}
-
-/* Malá tlačítka (paleta a insta) */
-button.small {
-    padding: 5px;
-    background: none;
     border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #0099ff, #00ccff);
+    color: #fff;
+
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4);
+    transition: 0.3s;
 }
 
+/* Hover neon */
+button.primary:hover {
+    box-shadow: 0 0 15px #00c8ff, 0 0 30px #00c8ff;
+    transform: translateY(-2px);
+}
+
+/* Malá tlačítka pro ikony */
+button.small {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 7px;
+    margin: 10px;
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+    transition: 0.3s ease;
+}
+
+/* Ikony */
 button.small img {
     width: 35px;
     height: 35px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+button.small:hover {
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 15px rgba(0,180,255,0.3);
 }
 
 button.small:hover img {
     transform: scale(1.2);
+    filter: drop-shadow(0 0 6px #00caff);
 }
 
-/* Výstup */
+/* Výstupní pole */
 #vystup {
     font-weight: bold;
     text-align: center;
