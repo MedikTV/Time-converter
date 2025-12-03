@@ -7,44 +7,46 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color:#252627; font-family: Arial, sans-serif; color: #fff; text-align: center; padding: 20px;">
+<body>
+    <div class="container">
+        <h1>Převodník času</h1>
 
-    <h1>Převodník času</h1>
+        <input type="number" id="vstup" placeholder="Zadej číslo">
 
-    <input type="number" id="vstup" placeholder="Zadej číslo" style="width: 100px; font-size: 16px;"><br><br>
+        <select id="vyber1">
+            <option value="sekundy">sekundy</option>
+            <option value="minuty">minuty</option>
+            <option value="hodiny">hodiny</option>
+            <option value="dny">dny</option>
+            <option value="tydny">tydny</option>
+            <option value="mesice">mesice</option>
+            <option value="roky">roky</option>
+        </select>
 
-    <select id="vyber1">
-        <option value="sekundy">sekundy</option>
-        <option value="minuty">minuty</option>
-        <option value="hodiny">hodiny</option>
-        <option value="dny">dny</option>
-        <option value="tydny">tydny</option>
-        <option value="mesice">mesice</option>
-        <option value="roky">roky</option>
-    </select>
+        <select id="vyber2">
+            <option value="sekundy">sekundy</option>
+            <option value="minuty">minuty</option>
+            <option value="hodiny">hodiny</option>
+            <option value="dny">dny</option>
+            <option value="tydny">tydny</option>
+            <option value="mesice">mesice</option>
+            <option value="roky">roky</option>
+        </select>
 
-    <select id="vyber2">
-        <option value="sekundy">sekundy</option>
-        <option value="minuty">minuty</option>
-        <option value="hodiny">hodiny</option>
-        <option value="dny">dny</option>
-        <option value="tydny">tydny</option>
-        <option value="mesice">mesice</option>
-        <option value="roky">roky</option>
-    </select><br><br>
+        <button class="primary" onclick="vysledek()">Vypočítat</button>
 
-    <button onclick="vysledek()" style="width: 150px; font-size: 16px;">Vypočítat</button><br><br>
+        <input type="text" id="vystup" readonly>
 
-    <input type="text" id="vystup" readonly style="width: 100px; font-size: 16px;"><br><br>
+        <div>
+            <button class="small" onclick="barva()">
+                <img src="paleta.png" alt="Paleta">
+            </button>
 
-    <button onclick="barva()" style="border:none; background:none;">
-        <img src="paleta.png" style="width: 30px; height: 30px;" alt="Paleta">
-    </button>
-
-    <button onclick="insta()" style="border:none; background:none;">
-        <img src="logo.png" style="width: 30px; height: 30px;" alt="Instagram">
-    </button>
+            <button class="small" onclick="insta()">
+                <img src="logo.png" alt="Instagram">
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
